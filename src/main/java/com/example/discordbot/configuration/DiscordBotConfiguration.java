@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class DiscordBotConfiguration {
 
-    @Value("${token}")
+    @Value("${spring.datasource.botToken}")
     private String token;
 
     @Bean
@@ -24,7 +24,6 @@ public class DiscordBotConfiguration {
                 .block();
 
         for (final EventListener<T> listener : eventListenerList) {
-            System.out.println(listener.hashCode());
             client.on(listener.getEventType())
                     .flatMap(listener::execute)
                     .onErrorResume(listener::handleError)

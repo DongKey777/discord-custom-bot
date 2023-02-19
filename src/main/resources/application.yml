@@ -1,0 +1,21 @@
+#token=ODYzNzcwMTMyNDI1MDgwODQy.GL5Yl3.RKRuTdMFpPkZJ40WLa5Zevzvr-MreIFY31LNFY
+#encryptToken = ENC(xPBoNzlHDF3FYRODcCVprRC3It4j7HkgtxdOl6fdXYLaSh8W0ZiYLHJPlvdWGQsNkO+ADQOfI3JBMuYlMN97zS7smh6+kGXZgpel55Q1KEY=)
+#alertChannelId=1070195689621049355
+
+# Jasypt
+jasypt:
+  encryptor:
+    bean: jasyptStringEncryptor
+    prefix: ENC(
+    suffix: )
+    algorithm: PBEWithMD5AndDES
+    pool-size: 2
+    string-output-type: base64
+    key-obtention-iterations: 1000
+    password: password
+
+spring:
+  datasource:
+    botToken: ENC(Yd44X23oaoS87pHopi44d2vT84N6PJ+KIio6gWQuL2NBR/9zXlD0kOykOKcV9JeMRkhjCQjsugvvVEqFzzHFjPdBPKTpBXq5OVarNystGeU=)
+    alertChannelId: 1070195689621049355
+    exchangeRateAuthKey: ENC(T1NX3+pqtuREOPKI+7VgKUiROnHnAlyKNL7imxoQdbqO4x8gwegR5N7i8qvgppTp)
